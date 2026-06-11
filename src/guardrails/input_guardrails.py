@@ -38,6 +38,7 @@ def detect_injection(user_input: str) -> bool:
         True if injection detected, False otherwise
     """
     INJECTION_PATTERNS = [
+<<<<<<< HEAD
         r"ignore (all )?(previous|above) instructions",
         r"you are now (.*?)(dan|unrestricted|limitless)",
         r"system prompt",
@@ -46,6 +47,11 @@ def detect_injection(user_input: str) -> bool:
         r"act as (a |an )?unrestricted",
         r"bỏ qua mọi hướng dẫn",
         r"base64"
+=======
+        # TODO: Add at least 5 regex patterns
+        # Example:
+        # r"ignore (all )?(previous|above) instructions",
+>>>>>>> d2b3167d1a07c9822801875e4f397f640cc19f91
     ]
 
     for pattern in INJECTION_PATTERNS:
@@ -75,6 +81,7 @@ def topic_filter(user_input: str) -> bool:
     """
     input_lower = user_input.lower()
 
+<<<<<<< HEAD
     if any(topic in input_lower for topic in BLOCKED_TOPICS):
         return True
         
@@ -82,6 +89,14 @@ def topic_filter(user_input: str) -> bool:
         return True
         
     return False
+=======
+    # TODO: Implement logic:
+    # 1. If input contains any blocked topic -> return True
+    # 2. If input doesn't contain any allowed topic -> return True
+    # 3. Otherwise -> return False (allow)
+
+    pass  # Replace with your implementation
+>>>>>>> d2b3167d1a07c9822801875e4f397f640cc19f91
 
 
 # ============================================================
@@ -134,6 +149,7 @@ class InputGuardrailPlugin(base_plugin.BasePlugin):
         self.total_count += 1
         text = self._extract_text(user_message)
 
+<<<<<<< HEAD
         if detect_injection(text):
             self.blocked_count += 1
             return self._block_response(
@@ -147,6 +163,16 @@ class InputGuardrailPlugin(base_plugin.BasePlugin):
             )
             
         return None
+=======
+        # TODO: Implement logic:
+        # 1. Call detect_injection(text)
+        #    - If True: increment blocked_count, return self._block_response("...")
+        # 2. Call topic_filter(text)
+        #    - If True: increment blocked_count, return self._block_response("...")
+        # 3. If both are False: return None (let message through)
+
+        pass  # Replace with your implementation
+>>>>>>> d2b3167d1a07c9822801875e4f397f640cc19f91
 
 
 # ============================================================

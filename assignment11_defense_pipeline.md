@@ -1,7 +1,10 @@
 # Assignment 11: Build a Production Defense-in-Depth Pipeline
 
+<<<<<<< HEAD
 **Student ID:** 2A202600772  
 **Student Name:** Vũ Tuấn Phương  
+=======
+>>>>>>> d2b3167d1a07c9822801875e4f397f640cc19f91
 **Course:** AICB-P1 — AI Agent Development  
 **Due:** End of Week 11  
 **Submission:** `.ipynb` notebook + individual report (PDF or Markdown)
@@ -347,6 +350,7 @@ class DefensePipeline:
 ## References
 
 - [Google ADK Plugin Documentation](https://google.github.io/adk-docs/)
+<<<<<<< HEAD
 
 ---
 
@@ -552,6 +556,8 @@ This pipeline demonstrates that **defense-in-depth is mandatory** for production
 - **Audit & Monitoring** enables continuous improvement
 
 The remaining gaps (multi-turn manipulation, Unicode homoglyphs, whitespace steganography) can be addressed with a Session Anomaly Detector, Unicode normalization, and full-text scanning — demonstrating that safety is an ongoing process, not a one-time implementation.
+=======
+>>>>>>> d2b3167d1a07c9822801875e4f397f640cc19f91
 - [NeMo Guardrails GitHub](https://github.com/NVIDIA/NeMo-Guardrails)
 - [Guardrails AI](https://www.guardrailsai.com/) — validator-based guardrails with pre-built checks
 - [LangGraph Documentation](https://langchain-ai.github.io/langgraph/) — stateful, graph-based agent pipelines

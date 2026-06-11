@@ -65,6 +65,7 @@ class ConfidenceRouter:
         Returns:
             RoutingDecision with routing action and metadata
         """
+<<<<<<< HEAD
         if action_type in HIGH_RISK_ACTIONS:
             return RoutingDecision(
                 action="escalate",
@@ -86,6 +87,34 @@ class ConfidenceRouter:
             return RoutingDecision(
                 action="escalate", confidence=confidence, reason="Low confidence — escalating", priority="high", requires_human=True
             )
+=======
+        # TODO 12: Implement routing logic
+        #
+        # 1. Check if action_type is in HIGH_RISK_ACTIONS
+        #    -> If yes: always escalate (action="escalate", priority="high",
+        #       requires_human=True, reason="High-risk action: {action_type}")
+        #
+        # 2. Check confidence thresholds:
+        #    - confidence >= 0.9:
+        #      action="auto_send", priority="low",
+        #      requires_human=False, reason="High confidence"
+        #
+        #    - 0.7 <= confidence < 0.9:
+        #      action="queue_review", priority="normal",
+        #      requires_human=True, reason="Medium confidence — needs review"
+        #
+        #    - confidence < 0.7:
+        #      action="escalate", priority="high",
+        #      requires_human=True, reason="Low confidence — escalating"
+
+        return RoutingDecision(
+            action="auto_send",
+            confidence=confidence,
+            reason="TODO: implement routing logic",
+            priority="low",
+            requires_human=False,
+        )  # TODO: Replace with implementation
+>>>>>>> d2b3167d1a07c9822801875e4f397f640cc19f91
 
 
 # ============================================================
@@ -104,6 +133,7 @@ class ConfidenceRouter:
 hitl_decision_points = [
     {
         "id": 1,
+<<<<<<< HEAD
         "name": "Duyệt giao dịch lớn bất thường",
         "trigger": "Khi người dùng yêu cầu chuyển khoản > 500.000.000 VNĐ",
         "hitl_model": "human-in-the-loop",
@@ -125,6 +155,29 @@ hitl_decision_points = [
         "hitl_model": "human-as-tiebreaker",
         "context_needed": "Câu hỏi của khách, Draft câu trả lời hiện tại, Văn bản chính sách gốc.",
         "example": "Khách hỏi chính sách lãi suất đặc biệt cho khách hàng VIP, AI không chắc chắn nên chuyển hướng cuộc gọi đến Call Center.",
+=======
+        "name": "TODO: Name this decision point",
+        "trigger": "TODO: When does this trigger?",
+        "hitl_model": "TODO: human-in-the-loop / human-on-the-loop / human-as-tiebreaker",
+        "context_needed": "TODO: What does the reviewer need to see?",
+        "example": "TODO: Give a concrete example scenario",
+    },
+    {
+        "id": 2,
+        "name": "TODO: Name this decision point",
+        "trigger": "TODO: When does this trigger?",
+        "hitl_model": "TODO: human-in-the-loop / human-on-the-loop / human-as-tiebreaker",
+        "context_needed": "TODO: What does the reviewer need to see?",
+        "example": "TODO: Give a concrete example scenario",
+    },
+    {
+        "id": 3,
+        "name": "TODO: Name this decision point",
+        "trigger": "TODO: When does this trigger?",
+        "hitl_model": "TODO: human-in-the-loop / human-on-the-loop / human-as-tiebreaker",
+        "context_needed": "TODO: What does the reviewer need to see?",
+        "example": "TODO: Give a concrete example scenario",
+>>>>>>> d2b3167d1a07c9822801875e4f397f640cc19f91
     },
 ]
 
